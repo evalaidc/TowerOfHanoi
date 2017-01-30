@@ -11,63 +11,76 @@ body {
 }
 .board > div {
   display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-}
-.post1{
-  background-color: red;
+  margin: 10px;
   height: 500px;
   width: 400px;
+}
 
+.post{
+  background-color: gray;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  display: flex;
+  justify-content: center;
 }
-.post2 {
-  background-color: green;
-  height: 500px;
-  width: 400px;
+#post1 {
+  background-image: url('img/cookies.png');
 }
-.post3 {
-  background-color: blue;
-  height: 500px;
-  width: 400px;
-
+#post2 {
+  background-image: url('img/essential-dinner-plate.jpg');
+  background-size: cover;
+}
+#post3 {
+  background-image: url('img/cookiemons.png');
 }
 .disc {
   display: block;
   color: white;
+  border: 1px solid black;
+  /*allows for pointer on hand to form when hovering over discs*/
+  cursor:pointer;
+  cursor:hand;
+  background-color: #e59400;
 
 }
 #disc1 {
-  width: 300px;
+  width: 100px;
   height: 50px;
-  background-color: blue;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 15px;
 }
 #disc2 {
-  width: 250px;
+  width: 150px;
   height: 50px;
-  background-color: blue;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 15px;
 }
 #disc3 {
   width: 200px;
   height: 50px;
-  background-color: blue;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 15px;
 }
 #disc4 {
-  width: 150px;
+  width: 250px;
   height: 50px;
-  background-color: blue;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 15px;
+}
+.active {
+  background-color: red;
 }
 
 /* if you want to incorporate the clickdown bar or the buttons to increase and decease amt.
@@ -80,7 +93,7 @@ body {
   align-items: center;
 }
 #disc6 {
-  width: 300px;
+  width: 350px;
   height: 50px;
   background-color: blue;
   display: flex;
@@ -88,7 +101,7 @@ body {
   align-items: center;
 }
 #disc7 {
-  width: 300px;
+  width: 400px;
   height: 50px;
   background-color: blue;
   display: flex;
