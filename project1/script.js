@@ -33,11 +33,11 @@ $('.post').on('click', function() {
   //   clearInterval()
 
   // var won = setInterval(wonAlert(),5000);
-  setTimeout(function(){
-    if ($('#post3').children().length === 4) {
-    alert('You Won! The cookie monster thanks you for your help!')
-    }
-},3000)
+//   setTimeout(function(){
+//     if ($('#post3').children().length === 4) {
+//     alert('You Won! The cookie monster thanks you for your help!')
+//     }
+// },1000)
     // clearInterval();
   // }
 
