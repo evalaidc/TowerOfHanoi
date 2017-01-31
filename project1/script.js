@@ -1,42 +1,82 @@
 //Pseudocode
 // start game
 // select the disc to be moved
-
-
+var selection = false;
 $('.post').on('click', function() {
-  if($(this).children(':first').hasClass('active')) {
-    $(this).children(':first').removeClass('active')
+  // something is selected
+  if (selection == true) {
+    // run the conditional
+    var value1 = $('.active').text();
+    var value2 = $(this).children(':first-child').text();
+    if ($(this).children().length === 0 || +value1 < +value2) {
+      $('.active').prependTo($(this))
+      $('.active').removeClass('active');
+      selection = false;
+    }
+    else  {
+      // console.log('This is not a valid move.')
+      $('.active').removeClass('active');
+      selection = false;
+    }
   }
+  // if something was not selected
   else {
-    // $('.disc').removeClass('active');
     $(this).children(':first').addClass('active');
-    $('#post1').on('click', moveDisc)
-    $('#post2').on('click', moveDisc)
-    $('#post3').on('click', moveDisc)
-}
+    selection = true;
+  }
 });
 
-// compare discs
-if ($('.active').val() > $('#post2').children(':first').val()) {
-  console.log('Not a Valid Move!');
-}
-else {
-  $('.active').prependTo("#post2");
-}
-
-if ($('.active').val() > $('#post3').children(':first').val()) {
-  console.log('Not a Valid Move!');
-}
-else {
-  $('.active').prependTo("#post3");
-}
-
-if ($('.active').val() > $('#post1').children(':first').val()) {
-  console.log('Not a Valid Move!');
-}
-else {
-  $('.active').prependTo("#post1");
-}
+//      var width1 = $('.active').css('width');
+//      var width2 = this.children(':first-child').css('width');
+//      if (+width > +width2) {
+//          console.log('This is not a valid move.');
+//      }
+//      else {
+//        $('#post1').on('click', moveDisc)
+//        $('#post2').on('click', moveDisc)
+//        $('#post3').on('click', moveDisc)
+//      };
+//
+//
+//
+//
+//
+//
+//
+//
+//     if($(this).children(':first').hasClass('active')) {
+//       $(this).children(':first').removeClass('active')
+//     }
+//     else {
+//       // $('.disc').removeClass('active');
+//       $(this).children(':first').addClass('active');
+//       $('#post1').on('click', moveDisc)
+//       $('#post2').on('click', moveDisc)
+//       $('#post3').on('click', moveDisc)
+//   }
+// });
+//
+// // compare discs
+// if ($('.active').val() > $('#post2').children(':first').val()) {
+//   console.log('Not a Valid Move!');
+// }
+// else {
+//   $('.active').prependTo("#post2");
+// }
+//
+// if ($('.active').val() > $('#post3').children(':first').val()) {
+//   console.log('Not a Valid Move!');
+// }
+// else {
+//   $('.active').prependTo("#post3");
+// }
+//
+// if ($('.active').val() > $('#post1').children(':first').val()) {
+//   console.log('Not a Valid Move!');
+// }
+// else {
+//   $('.active').prependTo("#post1");
+// }
 
 
 // post1
@@ -131,10 +171,10 @@ else {
 //       moveDisc();
 //   };
 // };
-function moveDisc() {
-  $('.active').prependTo($(this));
+// function moveDisc() {
+//   $('.active').prependTo($(this));
   // $('.active').removeClass('active');
-}
+// }
 
 // function moveDisc(width1, width) {
 //   var width1 = $('.active');
